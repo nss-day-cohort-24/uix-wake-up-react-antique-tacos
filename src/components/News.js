@@ -5,18 +5,22 @@ import React, { Component } from 'react';
 
 let NewsOutPut = (props) => {
     return(
-        <div className="text-center">
-            <h1>News</h1>
-            <p>"{props.title}" <br />from {props.name}</p>
-            <p>Read the full story <a href={props.url}>HERE</a></p>
-
+        <div className="d-flex justify-content-center">
+            <div className="card" style={{width: 18 + 'rem'}}>
+                <img className="card-img-top" src={props.image} alt=""/>
+                <div className="card-body">
+                    <h5 className="card-title">"{props.title}"</h5>
+                    <p className="card-text">{props.name}</p>
+                    <a href={props.url} className="btn btn-primary">Full Story</a>
+                </div>
+            </div>
         </div>
     )
 }
 
 
 
-class News extends React.Component {
+class News extends Component {
 
     constructor(props) {
         super(props);
@@ -61,7 +65,7 @@ class News extends React.Component {
 
 
     render() {
-        const { error, newsLoaded, objResult,showResult, value } = this.state;
+        const { error, newsLoaded, objResult } = this.state;
 
         if (error) {
         return( 
@@ -82,7 +86,8 @@ class News extends React.Component {
             <NewsOutPut
             name={objResult.articles[0].source.name}
             title={objResult.articles[0].title}
-            url={objResult.articles[0].url} />
+            url={objResult.articles[0].url}
+            image={objResult.articles[0].urlToImage} />
         </div>
             )
         }

@@ -16,6 +16,7 @@ export function logout () {
 export function loginWithGoogle () {
   return rebase.initializedApp.auth().signInWithPopup(googleProvider)
   .then((data) => {
+    console.log('user data', data);
     saveUser(data.user);
   });
 }
