@@ -23,7 +23,7 @@ export function loginWithGoogle () {
 
 export function saveUser (user) {
   console.log("save user", user);
-  return rebase.initializedApp.database().ref().child(`users/${user.uid}/info`)
+  return rebase.initializedApp.database().ref().child(`users/${user.uid}`)
     .set({
       email: user.email,
       uid: user.uid

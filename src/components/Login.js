@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { loginWithGoogle, logout  } from './auth';
 import { BrowserRouter, Route, Link, NavLink } from 'react-router-dom';
 import App from './App.js';
-import rebase from './base.js';
+import { rebase } from './base.js';
  
 
 class Login extends Component {
@@ -45,31 +45,43 @@ class Login extends Component {
 
       componentWillUnmount () {
         console.log("componentWillUnmount");
-        this.authListener()
+        this.authListener();
       }
 
       authenticate(){
         console.log('App: calling autheticate for google');
-        loginWithGoogle();
+        loginWithGoogle()
+        .then(() => {
+            this.setState({
+                authed: true
+            });
+        });
       }
 
       logoutApp(){
-        console.log('App: calling logoutApp')
+        console.log('App: calling logoutApp');
         logout();
       }
 
     render() {
         return(
             <BrowserRouter>
+            {this.state.authed
+                ?
+
+                <App />
+
+                : 
+
                 <div className="container">
                     <div className="d-flex flex-column justify-content-center text-center">
                         <h1> Google Login</h1>
-                        <button type="button" onClick={() => this.authenticate('google')} className="login-btn btn btn-secondary btn-lg"><Link to="/"> Large button</Link></button>
+                        <button type="button" onClick={() => this.authenticate('google')} className="login-btn btn btn-secondary btn-lg">Large button</button>
                     </div>
 
 
-                    <Route path="/" Component={App} />
                 </div>
+            }
             </BrowserRouter>
         )
     }
