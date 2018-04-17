@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { loginWithGoogle, logout  } from './auth';
-import { BrowserRouter, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App.js';
 import { rebase } from './base.js';
  

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Footer from './Footer';
 import Weather from './Weather';
+import News from './News';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <header className="App-header">
         </header>
         <Weather />
+        <News />
         <Footer />
       </div>
     );
