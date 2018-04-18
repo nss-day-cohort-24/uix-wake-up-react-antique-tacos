@@ -15,6 +15,7 @@ class Login extends Component {
             authed: false,
             loading: true,
             uid: null,
+            zip: '',
           }
 
           this.authenticate = this.authenticate.bind(this);
@@ -31,6 +32,7 @@ class Login extends Component {
               authed: true,
               loading: false,
               uid: user.uid,
+              zip: user.zip,
             });
             //get DB stuff for user here
           } else {
@@ -38,6 +40,7 @@ class Login extends Component {
               authed: false,
               loading: false,
               uid: null,
+              zip: '',
             })
           }
         })
