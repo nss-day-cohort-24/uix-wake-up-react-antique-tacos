@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 
-
+let QuoteOutPut = (props) => {
+    return(
+        <div className="d-flex justify-content-center">
+            <div className="card" style={{width: 18 + 'rem'}}>
+                <img className="card-img-top" src={props.image} alt=""/>
+                <div className="card-body">
+                    <h5 className="card-title">"{props.quote}"</h5>
+                    <p className="card-text">-{props.author}</p>
+                </div>
+            </div>
+        </div>
+    )
+}
 class Quote extends Component {
     constructor(props) {
         super(props);
