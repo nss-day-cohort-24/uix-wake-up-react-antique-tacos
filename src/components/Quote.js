@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './quote.css';
 
 let QuoteOutPut = (props) => {
     return(
@@ -18,7 +19,7 @@ class Quote extends Component {
         super(props);
         this.state = {
             error: null,
-            newsLoaded: false,
+            quoteLoaded: false,
             quoteResult: {},
             showResult: false,
         }
@@ -27,7 +28,7 @@ class Quote extends Component {
         this.getQuote()
     }
     getQuote(){
-        fetch(`http://quotes.rest/qod.json?category=inspire`)
+        fetch(`http://quotes.rest/qod.json?category=inspire&maxlength=75`)
         .then(data => data.json())
         .then(
             (result) => {
@@ -65,9 +66,9 @@ class Quote extends Component {
         return(
         <div>
         <QuoteOutPut
-        quote={quoteResult.Quote.contents.quotes[0].quote}
-        author={quoteResult.Quote.contents.quotes[0].author}
-        background={quoteResult.Quote.contents.quotes[0].background} />
+        quote={quoteResult.contents.quotes[0].quote}
+        author={quoteResult.contents.quotes[0].author}
+        background={quoteResult.contents.quotes[0].background} />
         </div>
             )
         }
