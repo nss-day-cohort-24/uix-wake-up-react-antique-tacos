@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Weather from './Weather';
 import News from './News';
 import Quote from './Quote';
+import Logout from './LogoutBtn';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <header className="App-header">
         </header>
         <Quote />
+        <Logout />
         <Weather />
         <News />
         <Footer />
