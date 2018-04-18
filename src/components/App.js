@@ -3,7 +3,6 @@ import './App.css';
 import Footer from './Footer';
 import Weather from './Weather';
 import News from './News';
-import Quote from './Quote';
 import Logout from './LogoutBtn';
 
 class App extends Component {
@@ -13,7 +12,6 @@ class App extends Component {
       {console.log("it worked kinda")}
         <header className="App-header">
         </header>
-        <Quote />
         <Logout />
         <Weather />
         <News />
