@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { logout } from './auth';
-import { BrowserRouter } from 'react-router-dom';
-import { rebase } from './base.js';
 
 
 class LogoutButton extends Component {

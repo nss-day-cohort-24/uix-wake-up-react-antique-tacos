@@ -3,8 +3,8 @@ import './Footer.css';
 
 function Footer() {
     return (
-        <footer className="footer">
-            <p className="copyright">Copyright &#169; 2018, Antique Tacos</p>
+        <footer className="footer d-flex justify-content-center">
+            <p className="copyright align-self-center">Copyright &#169; 2018, Antique Tacos</p>
         </footer>
     )
 }

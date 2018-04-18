@@ -32,7 +32,6 @@ class Login extends Component {
               authed: true,
               loading: false,
               uid: user.uid,
-              zip: user.zip,
             });
             //get DB stuff for user here
           } else {
@@ -40,7 +39,6 @@ class Login extends Component {
               authed: false,
               loading: false,
               uid: null,
-              zip: '',
             })
           }
         })
@@ -70,7 +68,7 @@ class Login extends Component {
         return(
             <BrowserRouter>
             {this.state.authed
-                ?
+                ?                       
 
                 <App />
 
