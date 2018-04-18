@@ -25,7 +25,11 @@ class Quote extends Component {
                     objResult = result
                 });
             },
-        )
+            (error) => {
+                this.state ({
+                    showResult:true,
+                    error: error,
+                });
+            })
+        }
     }
-
-}
