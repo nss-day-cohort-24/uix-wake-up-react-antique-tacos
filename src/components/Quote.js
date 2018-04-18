@@ -7,7 +7,7 @@ class Quote extends Component {
         this.state = {
             error: null,
             newsLoaded: false,
-            objResult: {},
+            quoteResult: {},
             showResult: false,
         }
     }
@@ -21,8 +21,8 @@ class Quote extends Component {
             (result) => {
                 console.log("Quote: ", result);
                 this.setState({
-                    quoteLoaded = true,
-                    objResult = result
+                    quoteLoaded : true,
+                    quoteResult : result
                 });
             },
             (error) => {
@@ -32,4 +32,34 @@ class Quote extends Component {
                 });
             })
         }
+
+    render() {
+        const { error, quoteLoaded, quoteResult } = this.state;
+
+        if (error) {
+        return( 
+            <div>
+                Error: {error.message}
+            </div>
+        )
+        } 
+        else if (!quoteLoaded) { 
+        return ( 
+            <div className="text-center">
+            Loading...
+            </div>
+        )
+        } else {
+        return(
+        <div>
+        <QuoteOutPut
+        quote={quoteResult.Quote.contents.quotes[0].quote}
+        author={quoteResult.Quote.contents.quotes[0].author}
+        background={quoteResult.Quote.contents.quotes[0].background} />
+        </div>
+            )
+        }
     }
+}
+
+export default Quote;
