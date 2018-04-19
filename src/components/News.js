@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './app.css';
+import './news.css';
 
 
 
@@ -6,12 +8,18 @@ import React, { Component } from 'react';
 let NewsOutPut = (props) => {
     return(
         <div className="d-flex justify-content-center">
-            <div className="card" style={{width: 18 + 'rem'}}>
-                <img className="card-img-top" src={props.image} alt=""/>
-                <div className="card-body">
-                    <h5 className="card-title">"{props.title}"</h5>
-                    <p className="card-text">{props.name}</p>
-                    <a href={props.url} className="btn btn-primary">Full Story</a>
+            <div className="card">
+                <h1 id="componentHed">NEWS</h1>
+                <div id="newsDiv">
+                    <div id="imageContainer">
+                        <img id="newsImage" className="card-img-top" src={props.image} alt=""/>
+                        <div id="imageOverlay"></div>
+                    </div>
+                    <div id="newsInfo" className="card-body">
+                        <h2 id="newsTitle" className="card-title">"{props.title}"</h2>
+                        <p id ="newsSource" className="card-text">{props.name}</p>
+                        <a id ="storyButton" href={props.url} className="btn btn-primary">Full Story</a>
+                    </div>
                 </div>
             </div>
         </div>

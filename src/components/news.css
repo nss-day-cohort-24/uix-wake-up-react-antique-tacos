@@ -1,0 +1,58 @@
+#newsDiv{
+    height: 120px;
+
+}
+
+#newsImage {
+    border-radius: 0px;
+    filter: blur(5px);
+    position: relative;
+    top: -10px;
+    left: -10px;
+    width: 105%;
+    z-index: 498;
+}
+
+#newsInfo{
+    height:160px;
+    position: relative;
+    top: -135px;
+    left: 0;
+}
+ 
+#newsTitle {
+    color: #F9FCFC;
+    font-size: 20px;
+}
+
+#imageOverlay {
+    height: 120px;
+    width: 100%;
+    position: absolute;
+    top: 39px;
+    background-color: rgb(48, 50, 63, 0.5);
+}
+
+#imageContainer{
+    height: 120px;
+    overflow: hidden;
+} 
+
+#newsSource {
+    display:inline-block;
+    font-family: 'Heebo';
+    font-weight: 500;
+    color: #f7f795;
+}
+
+#storyButton{
+    background-color: #f7f795;
+    font-size: 14px;
+    padding: 1px 30px;
+    color: #30323f;
+    border: none;
+    font-family: 'Heebo';
+    font-weight: 500;
+    z-index: 999;
+    float: right;
+} 

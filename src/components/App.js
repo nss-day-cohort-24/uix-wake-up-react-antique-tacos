@@ -50,9 +50,9 @@ componentDidMount () {
         <header className="App-header">
         </header>
         <Logout />
+        <Quote />
         <Weather 
         uid={this.state.uid}/>
-        <Quote />
         <News />
         <Footer />
       </div>
