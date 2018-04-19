@@ -15,6 +15,7 @@ class Login extends Component {
             authed: false,
             loading: true,
             uid: null,
+            zip: '',
           }
 
           this.authenticate = this.authenticate.bind(this);
@@ -67,7 +68,7 @@ class Login extends Component {
         return(
             <BrowserRouter>
             {this.state.authed
-                ?
+                ?                       
 
                 <App />
 

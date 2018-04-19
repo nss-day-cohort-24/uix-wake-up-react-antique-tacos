@@ -21,13 +21,24 @@ export function loginWithGoogle () {
   });
 }
 
+export function saveZip(uid, zip) {
+  console.log("save zip", zip);
+  return rebase.initializedApp.database().ref().child(`users/${uid}`)
+    .update({
+      zip: zip
+    })
+    .then(() => {
+      return uid;
+    });
+}
 
 export function saveUser (user) {
   console.log("save user", user);
   return rebase.initializedApp.database().ref().child(`users/${user.uid}`)
     .set({
       email: user.email,
-      uid: user.uid
+      uid: user.uid,
+      zip: 37206
     })
     .then(() => {
       return user;
