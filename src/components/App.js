@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './app.css';
 import Footer from './Footer';
 import Weather from './Weather';
 import News from './News';
