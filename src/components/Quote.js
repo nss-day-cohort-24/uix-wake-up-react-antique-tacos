@@ -3,11 +3,10 @@ import React, { Component } from 'react';
 let QuoteOutPut = (props) => {
     return(
         <div className="d-flex justify-content-center">
-            <div className="card" style={{width: 18 + 'rem'}}>
-                <img className="card-img-top" src={props.image} alt=""/>
+            <div className="card">
                 <div className="card-body">
-                    <h5 className="card-title">"{props.quote}"</h5>
-                    <p className="card-text">-{props.author}</p>
+                    <p className="quote card-title">"{props.quote}"</p>
+                    <p className="quoteAuthor card-text">-{props.author}</p>
                 </div>
             </div>
         </div>
@@ -27,7 +26,7 @@ class Quote extends Component {
         this.getQuote()
     }
     getQuote(){
-        fetch(`http://quotes.rest/qod.json?category=inspire`)
+        fetch(`http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en&key=<10>`)
         .then(data => data.json())
         .then(
             (result) => {
@@ -65,9 +64,8 @@ class Quote extends Component {
         return(
         <div>
         <QuoteOutPut
-        quote={quoteResult.contents.quotes[0].quote}
-        author={quoteResult.contents.quotes[0].author}
-        background={quoteResult.contents.quotes[0].background} />
+        quote={quoteResult.quoteText}
+        author={quoteResult.quoteAuthor} />
         </div>
             )
         }
