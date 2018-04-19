@@ -12,13 +12,14 @@ let NewsOutPut = (props) => {
                 <h1 id="componentHed">NEWS</h1>
                 <div id="newsDiv">
                     <div id="imageContainer">
-                        <img id="newsImage" className="card-img-top" src={props.image} alt=""/>
-                        <div id="imageOverlay"></div>
+                    <div id="imageOverlay">
+                    <img id="newsImage" className="card-img-top" src={props.image} alt=""/>
+                        </div>
                     </div>
                     <div id="newsInfo" className="card-body">
                         <h2 id="newsTitle" className="card-title">"{props.title}"</h2>
                         <p id ="newsSource" className="card-text">{props.name}</p>
-                        <a id ="storyButton" href={props.url} className="btn btn-primary">Full Story</a>
+                        {/* <a id ="storyButton" href={props.url} className="btn btn-primary">Full Story</a> */}
                     </div>
                 </div>
             </div>
