@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './quote.css';
 
 let QuoteOutPut = (props) => {
     return(
