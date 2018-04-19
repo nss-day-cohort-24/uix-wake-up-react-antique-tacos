@@ -27,7 +27,7 @@ class Quote extends Component {
         this.getQuote()
     }
     getQuote(){
-        fetch(`http://quotes.rest/qod.json?category=inspire&maxlength=25`)
+        fetch(`http://quotes.rest/qod.json?category=inspire`)
         .then(data => data.json())
         .then(
             (result) => {
