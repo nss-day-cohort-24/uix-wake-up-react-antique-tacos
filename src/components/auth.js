@@ -38,7 +38,7 @@ export function saveUser (user) {
     .set({
       email: user.email,
       uid: user.uid,
-      zip:""
+      zip: 37206
     })
     .then(() => {
       return user;

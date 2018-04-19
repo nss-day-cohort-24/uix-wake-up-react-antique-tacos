@@ -3,33 +3,33 @@ import { saveZip } from './auth.js';
 
 
 
-function WeatherInPut(props) {
-    return(
-        <div className="container d-flex justify-content-center input-group input-group-sm mb-5 w-25">
-            <span>
-                <input id="input-field" type="text" className="w-50-lg w-100-sm form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"  /> 
-            </span>
+// function WeatherInPut(props) {
+//     return(
+//         <div className="container d-flex justify-content-center input-group input-group-sm mb-5 w-25">
+//             <span>
+//                 <input id="input-field" type="text" className="w-50-lg w-100-sm form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"  /> 
+//             </span>
             
         
-        {props.showResult ?
-            <div> </div>
-            :
-            <div className="input-group-prepend">
-                <span className="input-group-text" id="inputGroup-sizing-sm" onClick={() => { props.showClicked(props.uid) }}>Enter
-                </span>
+//         {props.showResult ?
+//             <div> </div>
+//             :
+//             <div className="input-group-prepend">
+//                 <span className="input-group-text" id="inputGroup-sizing-sm" onClick={() => { props.showClicked(props.uid) }}>Enter
+//                 </span>
                 
-            </div>
+//             </div>
             
-        }                
-        </div>      
-    )
-}
+//         }                
+//         </div>      
+//     )
+// }
 
 
 
 
 function WeatherOutPut (props) {
-    if(props.showResult) {
+    if(props.weatherLoaded) {
         return (
             <div className="container text-center">
                 <h4>Temperature for your area:</h4>
@@ -81,7 +81,10 @@ class Weather extends React.Component {
             showResult:true
         }, this.getWeather(val))
     }
-
+    componentDidMount() {
+        this.getWeather(37206);
+    }
+    
   
 
 
@@ -108,7 +111,7 @@ class Weather extends React.Component {
 
 
     render() {
-        const { error, weatherLoaded, objResult,showResult, value } = this.state;
+        const { error, weatherLoaded, objResult,showResult } = this.state;
 
         if (error) {
         return( 
@@ -120,18 +123,14 @@ class Weather extends React.Component {
         else if (!weatherLoaded) { 
         return ( 
             <div className="text-center">
-            <WeatherInPut
-            weatherLoaded={weatherLoaded}
-            showClicked={this.showClicked}
-            value={value} 
-            uid={this.props.uid}/>
+                Loading...
             </div>
         )
-        } else {
+        } else if(weatherLoaded) {
         return(
         <div>
             <WeatherOutPut
-            showResult={showResult}
+            weatherLoaded={weatherLoaded}
             name={objResult.city.name}
             temp={objResult.list[0].main.temp}
             showClicked={this.showClicked} 
