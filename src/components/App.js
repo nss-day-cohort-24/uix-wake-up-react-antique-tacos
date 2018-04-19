@@ -4,7 +4,7 @@ import Weather from './Weather';
 import News from './News';
 import Logout from './LogoutBtn';
 import { rebase } from './base.js';
-import Quote from './Quote';
+// import Quote from './Quote';
 
 class App extends Component {
   constructor(props) {
@@ -52,7 +52,7 @@ componentDidMount () {
         <Logout />
         <Weather 
         uid={this.state.uid}/>
-        <Quote />
+         {/* <Quote /> */}
         <News />
         <Footer />
       </div>
