@@ -58,7 +58,7 @@ class Quote extends Component {
         else if (!quoteLoaded) { 
         return ( 
             <div className="text-center">
-            Loading...
+            Loading....
             </div>
         )
         } else {
