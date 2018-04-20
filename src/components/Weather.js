@@ -1,5 +1,7 @@
 import React from 'react';
 import { saveZip } from './auth.js';
+import './weather.css';
+import './app.css';
 
 
 
@@ -30,21 +32,24 @@ import { saveZip } from './auth.js';
 
 function WeatherOutPut (props) {
     if(props.weatherLoaded) {
+        let temp = props.temp;
+        let tempRounded = Math.round(temp);
         return (
-            <div className="container text-center">
-                <h4>Temperature for your area:</h4>
-                <p key={props.name}>
-                    {props.name}: {props.temp}<br />
-                    {props.weather}
-                </p>
-                <div className='d-flex justify-content-center mb-5'>
-                    <input id="input-field" type="text" className="w-50-lg w-100-sm form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"  /> 
+            <div>
+                <h1 id="componentHed">WEATHER</h1>
 
-                    <div className="input-group-prepend">
-                        <span className="input-group-text" id="inputGroup-sizing-sm" onClick={() => { props.showClicked(props.uid) }}>Enter
-                        </span>
+                    <h2 className ="col-6">{props.name}</h2>
+                    <div className='d-flex mb-5'>
+                        <input id="input-field" type="text" className="w-50-lg w-100-sm form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"  /> 
+    
+                        <div className="input-group-prepend">
+                            <span className="input-group-text" id="inputGroup-sizing-sm" onClick={() => { props.showClicked(props.uid) }}>Enter
+                            </span>
+                        </div>
                     </div>
-                </div>
+                    <h1 id="temp" className ="col-6">{tempRounded}&#8457;</h1>
+                    <h2 className ="col-6">{props.weather}</h2>
+                
             </div>
         )
     }else {

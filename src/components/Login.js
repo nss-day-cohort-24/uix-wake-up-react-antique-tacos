@@ -77,10 +77,8 @@ class Login extends Component {
                 <div className="container">
                     <div className="d-flex flex-column justify-content-center text-center">
                         <h1> Google Login</h1>
-                        <button type="button" onClick={() => this.authenticate('google')} className="login-btn btn btn-secondary btn-lg">Large button</button>
+                        <button type="button" onClick={() => this.authenticate('google')} className="login-btn btn btn-secondary btn-lg">Login</button>
                     </div>
-
-
                 </div>
             }
             </BrowserRouter>

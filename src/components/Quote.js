@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import './quote.css';
+import './app.css';
 
 let QuoteOutPut = (props) => {
     return(
         <div className="d-flex justify-content-center">
             <div className="card">
-                <div className="card-body">
-                    <p className="quote card-title">"{props.quote}"</p>
-                    <p className="quoteAuthor card-text">-{props.author}</p>
+                <div id="quoteDiv" className="card-body">
+                    <p id="quote" className=" col-12">"{props.quote}"</p>
+                    <p id="quoteAuthor" className=" card-text">-{props.author}</p>
                 </div>
             </div>
         </div>
