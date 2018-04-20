@@ -8,7 +8,7 @@ class LogoutButton extends Component {
         <div>
             <div>
             </div>
-            <button type="button" onClick={() => logout('google')} className="logout-btn btn btn-secondary">Log Out</button>
+            <button type="button" onClick={() => logout('google')} className="logout-btn btn btn-secondary">Logout</button>
         </div>
 
     )
