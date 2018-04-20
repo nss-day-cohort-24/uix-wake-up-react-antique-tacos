@@ -17,11 +17,11 @@ class NewsCollapse extends Component {
     render() {
         return (
             <div>
-                <h3 onClick={this.toggle} >News</h3>
+                <h1 id="componentHed" onClick={this.toggle}>NEWS</h1>
+                <News />
                 <Collapse isOpen={this.state.collapse}>
                     <Card>
                         <CardBody>
-                            <News />
                         </CardBody>
                     </Card>
                 </Collapse>

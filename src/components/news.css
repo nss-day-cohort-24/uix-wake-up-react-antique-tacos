@@ -1,5 +1,5 @@
 #newsDiv{
-    height: 120px;
+    height: 98px;
 
 }
 
@@ -15,9 +15,9 @@
 }
 
 #newsInfo{
-    height:160px;
+    height: 98px;
     position: relative;
-    top: -105px;
+    top: -83px;
     left: 0;
     z-index: 999;
     padding: 0 15px;
@@ -30,16 +30,15 @@
 }
 
 #imageOverlay {
-    height: 120px;
+    height: 99px;
     width: 100%;
     position: absolute;
-    top: 38px;
     background-color: #30323F;
     overflow: hidden;
 }
 
 #imageContainer{
-    height: 120px;
+    height: 98px;
     overflow: hidden;
 } 
 

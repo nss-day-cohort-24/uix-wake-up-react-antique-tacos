@@ -5,7 +5,7 @@ import './app.css';
 let QuoteOutPut = (props) => {
     return(
         <div className="d-flex justify-content-center">
-            <div className="card">
+            <div className="card border-0">
                 <div id="quoteDiv" className="card-body">
                     <p id="quote" className=" col-12">"{props.quote}"</p>
                     <p id="quoteAuthor" className=" card-text">-{props.author}</p>

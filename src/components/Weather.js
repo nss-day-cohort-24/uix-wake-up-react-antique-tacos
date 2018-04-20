@@ -35,21 +35,21 @@ function WeatherOutPut (props) {
         let temp = props.temp;
         let tempRounded = Math.round(temp);
         return (
-            <div>
-                <h1 id="componentHed">WEATHER</h1>
-
-                    <h2 className ="col-6">{props.name}</h2>
-                    <div className='d-flex mb-5'>
-                        <input id="input-field" type="text" className="w-50-lg w-100-sm form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"  /> 
-    
-                        <div className="input-group-prepend">
-                            <span className="input-group-text" id="inputGroup-sizing-sm" onClick={() => { props.showClicked(props.uid) }}>Enter
-                            </span>
-                        </div>
+            <div className="d-flex flex-row justify-content-center mb-2">
+                <div className="col-6">
+                    <h2 className ="pl-0 col-12">{props.name}</h2>
+                    <div className='d-flex mb-1'>
+                            <input id="input-field" type="text" className="w-100 form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"  /> 
+                                <div className="input-group-prepend">
+                                    <span className="input-group-text" id="inputGroup-sizing-sm" onClick={() => { props.showClicked(props.uid) }}>Enter
+                                    </span>
+                                </div>
                     </div>
-                    <h1 id="temp" className ="col-6">{tempRounded}&#8457;</h1>
-                    <h2 className ="col-6">{props.weather}</h2>
-                
+                </div>
+                <div>
+                    <h1 id="temp" className ="col-12 mb-0">{tempRounded}&#8457;</h1>
+                    <h5 className ="col-12 mt-0 mb-0">{props.weather}</h5>
+                </div>
             </div>
         )
     }else {

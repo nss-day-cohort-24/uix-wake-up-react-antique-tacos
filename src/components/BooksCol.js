@@ -16,7 +16,7 @@ class BooksCollapse extends Component {
     render() {
         return (
             <div>
-                <h3 onClick={this.toggle} >Books</h3>
+                <h1 id="componentHed" onClick={this.toggle}>BOOKS</h1>
                 <Collapse isOpen={this.state.collapse}>
                     <Card>
                         <CardBody>
