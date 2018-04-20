@@ -7,8 +7,7 @@ import { rebase } from './base.js';
 import WeatherCollapse from './WeatherCol';
 import NewsCollapse from './NewsCol';
 import BooksCollapse from './BooksCol';
-
-// import Quote from './Quote';
+import Quote from './Quote';
 
 class App extends Component {
   constructor(props) {
@@ -53,6 +52,7 @@ componentDidMount () {
         <header className="App-header">
         </header>
         <Logout />
+        <Quote />
         <WeatherCollapse />
         <NewsCollapse />
         <BooksCollapse />

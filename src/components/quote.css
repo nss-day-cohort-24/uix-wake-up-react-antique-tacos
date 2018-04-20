@@ -1,0 +1,19 @@
+#quoteDiv {
+    background-color: #30323F;
+    border: none;
+    box-shadow: none;
+    border-radius: none;
+    padding-top: 5em;
+}
+
+#quote {
+    color: #F7F795;
+    font-size: 12pt;
+    font-weight: 500;
+    float: left;
+}
+
+#quoteAuthor {
+    color: #F7F795;
+    float: right;
+}
