@@ -8,8 +8,7 @@ import './news.css';
 let NewsOutPut = (props) => {
     return(
         <div className="d-flex justify-content-center">
-            <div className="card">
-                <h1 id="componentHed">NEWS</h1>
+            <div className="card border-0">
                 <div id="newsDiv">
                     <div id="imageContainer">
                         <div id="imageOverlay">
