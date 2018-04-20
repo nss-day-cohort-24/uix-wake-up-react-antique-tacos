@@ -35,10 +35,11 @@ export function saveZip(uid, zip) {
 export function saveUser (user) {
   console.log("save user", user);
   return rebase.initializedApp.database().ref().child(`users/${user.uid}`)
-    .set({
+    .update({
       email: user.email,
       uid: user.uid,
-      zip: 37206
+      name: user.displayName,
+      photo: user.photoURL
     })
     .then(() => {
       return user;

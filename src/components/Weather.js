@@ -84,11 +84,11 @@ class Weather extends React.Component {
     componentDidMount() {
         this.getWeather(37206);
     }
-    
   
 
 
 
+    
     getWeather(value) {
         fetch(`http://api.openweathermap.org/data/2.5/forecast?zip=${value},us&units=imperial&APPID=aeace81c0d72e15b17ad94207544e2f8`)
         .then(data => data.json())
