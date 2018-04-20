@@ -3,7 +3,7 @@ body {
     font-family: 'Heebo';
 }
 
-#componentHed, h1 {
+#componentHed {
     font-family: 'Heebo';
     font-size: 25px;
     font-weight: 800;
