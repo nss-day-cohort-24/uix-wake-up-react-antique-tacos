@@ -4,6 +4,10 @@ import Weather from './Weather';
 import News from './News';
 import Logout from './LogoutBtn';
 import { rebase } from './base.js';
+import WeatherCollapse from './WeatherCol';
+import NewsCollapse from './NewsCol';
+import BooksCollapse from './BooksCol';
+
 // import Quote from './Quote';
 
 class App extends Component {
@@ -16,7 +20,6 @@ class App extends Component {
         uid: null,
         zip: '',
       }
-
 
 }
 
@@ -50,10 +53,9 @@ componentDidMount () {
         <header className="App-header">
         </header>
         <Logout />
-        <Weather 
-        uid={this.state.uid}/>
-         {/* <Quote /> */}
-        <News />
+        <WeatherCollapse />
+        <NewsCollapse />
+        <BooksCollapse />
         <Footer />
       </div>
     );
