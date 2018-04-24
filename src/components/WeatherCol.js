@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Collapse, CardBody, Card } from 'reactstrap';
 import Weather from './Weather';
 
 
@@ -17,11 +17,11 @@ class WeatherCollapse extends Component {
     render() {
         return (
                 <div>
-                    <h3 onClick={this.toggle} >Weather</h3>
+                    <h1 id="componentHed" onClick={this.toggle}>WEATHER</h1>
+                    <Weather />
                     <Collapse isOpen={this.state.collapse}>
                         <Card>
-                            <CardBody>
-                                <Weather />
+                            <CardBody className ="pb-0">
                             </CardBody>
                         </Card>
                     </Collapse>

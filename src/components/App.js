@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import Footer from './Footer';
-import Weather from './Weather';
-import News from './News';
-import Logout from './LogoutBtn';
 import { rebase } from './base.js';
+import Logout from './LogoutBtn';
+import User from './User';
+import Quote from './Quote';
 import WeatherCollapse from './WeatherCol';
 import NewsCollapse from './NewsCol';
 import BooksCollapse from './BooksCol';
-import Quote from './Quote';
+import Footer from './Footer';
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +16,8 @@ class App extends Component {
         authed: false,
         loading: true,
         uid: null,
-        zip: '',
+        image: null,
+        name: null,
       }
 
 }
@@ -31,6 +31,8 @@ componentDidMount () {
           authed: true,
           loading: false,
           uid: user.uid,
+          image: user.photoURL,
+          name: user.displayName
         });
         //get DB stuff for user here
       } else {
@@ -49,9 +51,8 @@ componentDidMount () {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-        </header>
         <Logout />
+        <User Image={this.state.image} name={this.state.name} />
         <Quote />
         <WeatherCollapse />
         <NewsCollapse />

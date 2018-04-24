@@ -6,9 +6,9 @@ class LogoutButton extends Component {
     render() {
     return (
         <div>
-            <div>
+            <div className="d-flex justify-content-center align-items-center">
+            <button id="logoutButton" type="button" onClick={() => logout('google')} className="logout-btn btn btn-secondary text-center"><p>Logout</p></button>
             </div>
-            <button type="button" onClick={() => logout('google')} className="logout-btn btn btn-secondary">Logout</button>
         </div>
 
     )
