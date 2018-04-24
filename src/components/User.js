@@ -1,40 +1,40 @@
 import React, { Component } from 'react';
-import './quote.css';
 import './app.css';
+import { saveUser } from './auth.js';
 
-let QuoteOutPut = (props) => {
+let UserOutput = (props) => {
     return(
-        <div className="d-flex justify-content-center">
-            <div className="card border-0">
-                <div id="quoteDiv" className="card-body">
-                    <p id="quote" className="col-12">"{props.quote}"</p>
-                    <p id="quoteAuthor" className="card-text">-{props.author}</p>
-                </div>
+        <div className="d-flex justify-content-between">
+            <div className="row">
+                <p  className="col-3">Hello, </p>
+                <image className="col-6" src={props.image} alt="Your Picture" />
+                <p  className="col-3">{props.name}</p>
             </div>
         </div>
     )
 }
-class Quote extends Component {
+
+class User extends Component {
     constructor(props) {
         super(props);
         this.state = {
             error: null,
-            quoteLoaded: false,
-            quoteResult: {},
+            userLoaded: false,
+            userResult: {},
             showResult: false,
         }
     }
     componentDidMount() {
-        this.getQuote()
+        this.getUser()
     }
-    getQuote(){
-        fetch(`http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en&key=<10>`)
+    getUser(user){
+        fetch(`https://antique-taco-group-project.firebaseio.com/users/${user.uid}`)
         .then(data => data.json())
         .then(
             (result) => {
                 this.setState({
-                    quoteLoaded : true,
-                    quoteResult : result
+                    userLoaded : true,
+                    userResult : result
                 });
             },
             (error) => {
@@ -44,9 +44,8 @@ class Quote extends Component {
                 });
             })
         }
-
     render() {
-        const { error, quoteLoaded, quoteResult } = this.state;
+        const { error, userLoaded, userResult } = this.state;
 
         if (error) {
         return( 
@@ -55,7 +54,7 @@ class Quote extends Component {
             </div>
         )
         } 
-        else if (!quoteLoaded) { 
+        else if (!userLoaded) { 
         return ( 
             <div className="text-center">
             Loading....
@@ -64,13 +63,11 @@ class Quote extends Component {
         } else {
         return(
         <div>
-        <QuoteOutPut
-        quote={quoteResult.quoteText}
-        author={quoteResult.quoteAuthor} />
+        <UserOutput
+        name={user.name}
+        image={user.image} />
         </div>
             )
         }
     }
 }
-
-export default Quote;

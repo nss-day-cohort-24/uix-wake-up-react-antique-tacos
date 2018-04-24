@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import Footer from './Footer';
-import Weather from './Weather';
-import News from './News';
-import Logout from './LogoutBtn';
 import { rebase } from './base.js';
+import Logout from './LogoutBtn';
+import User from './User';
+import Quote from './Quote';
 import WeatherCollapse from './WeatherCol';
 import NewsCollapse from './NewsCol';
 import BooksCollapse from './BooksCol';
-import Quote from './Quote';
+import Footer from './Footer';
 
 class App extends Component {
   constructor(props) {

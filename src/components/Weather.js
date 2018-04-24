@@ -116,7 +116,7 @@ class Weather extends React.Component {
 
 
     render() {
-        const { error, weatherLoaded, objResult,showResult } = this.state;
+        const { error, weatherLoaded, objResult,} = this.state;
 
         if (error) {
         return( 
