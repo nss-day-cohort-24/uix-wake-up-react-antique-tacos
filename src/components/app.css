@@ -14,7 +14,7 @@ body {
     padding-bottom: 5px;
     text-align: center;
     color: #F7F795;
-    background-color: #475072;
+    background-image: linear-gradient(#475072, #373e57);
     margin-bottom: 0;
 }
 
@@ -31,3 +31,42 @@ p{
 }
 
 
+.userContainer{
+    height: 150px;
+    position: relative;
+    z-index: 999;
+    margin-bottom: -60px;
+}
+
+#userImage {
+    border: 4px solid #30323F;
+    height: 120px !important;
+    width: 120px !important;
+    padding: 0;
+}
+
+#greeting {
+    font-size: 12px;
+    color: #30323F;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+#logoutButton {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    width: 80%;
+    vertical-align: middle;
+    padding: 0px;
+    border: 0px;
+    color: #30323F;
+    background: linear-gradient(#F7F795,rgb(248, 226, 128));
+}
+
+#logoutButton p {
+    height: 22px;
+    letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}

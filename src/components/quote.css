@@ -1,9 +1,9 @@
 #quoteDiv {
-    background-color: #30323F;
+    background-image:linear-gradient(#30323F,rgb(30, 31, 39));
     border: none;
     box-shadow: none;
     border-radius: none;
-    padding-top: 5em;
+    padding-top: 50px;
 }
 
 #quote {

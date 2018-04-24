@@ -38,7 +38,7 @@ class Quote extends Component {
                 });
             },
             (error) => {
-                this.state ({
+                this.setState ({
                     showResult:true,
                     error: error,
                 });

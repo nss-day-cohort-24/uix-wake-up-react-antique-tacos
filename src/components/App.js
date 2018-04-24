@@ -16,7 +16,8 @@ class App extends Component {
         authed: false,
         loading: true,
         uid: null,
-        zip: '',
+        image: null,
+        name: null,
       }
 
 }
@@ -30,6 +31,8 @@ componentDidMount () {
           authed: true,
           loading: false,
           uid: user.uid,
+          image: user.photoURL,
+          name: user.displayName
         });
         //get DB stuff for user here
       } else {
@@ -48,9 +51,8 @@ componentDidMount () {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-        </header>
         <Logout />
+        <User Image={this.state.image} name={this.state.name} />
         <Quote />
         <WeatherCollapse />
         <NewsCollapse />
